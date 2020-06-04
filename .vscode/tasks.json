@@ -1,0 +1,34 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: g++ build CaveStory",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"${workspaceFolder}/source/src/**.cpp",
+				"-o",
+				"${workspaceFolder}/CaveStory",
+				"-I",
+				"/usr/local/include/SDL",
+				"-I",
+				"${workspaceFolder}/source/headers",
+				"-L",
+				"/usr/lib",
+				"-l",
+				"SDL2",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
