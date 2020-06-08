@@ -3,21 +3,23 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "C/C++: g++ build CaveStory",
+			"label": "C/C++: g++ build cavestory",
 			"command": "/usr/bin/g++",
 			"args": [
 				"-g",
 				"${workspaceFolder}/source/src/**.cpp",
 				"-o",
-				"${workspaceFolder}/CaveStory",
+				"${workspaceFolder}/cavestory",
 				"-I",
-				"/usr/local/include/SDL",
+				"/usr/include/SDL2",
 				"-I",
 				"${workspaceFolder}/source/headers",
 				"-L",
-				"/usr/lib",
+				"/usr/local/lib",
 				"-l",
 				"SDL2",
+				"-l",
+				"SDL2_image",
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
