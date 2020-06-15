@@ -29,6 +29,8 @@ void Game::gameLoop(){
     Input input;
     SDL_Event event; //contains the SDL events that happened in the frame
 
+    this->_player = Sprite(graphics, "content/sprites/MyChar.png", 0, 0, 16, 16, 100, 100);
+
     while(true){
         input.beginNewFrame();
         if(SDL_PollEvent(&event)){
@@ -54,11 +56,15 @@ void Game::gameLoop(){
         //keeps the framerate at or below the declared fps
         this->update(std::min(ELAPSED_TIME_MS,MAX_FRAME_TIME));
         LAST_UPDATE_TIME = CURRENT_TIME_MS;
+
+        this->draw(graphics);
     };
 }
 
 void Game::draw(Graphics &graphics){
-
+    graphics.clear();
+    this->_player.draw(graphics, 100, 100);
+    graphics.flip();
 }
 
 void Game::update(float elapsedTime){

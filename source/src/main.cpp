@@ -1,6 +1,6 @@
 #include "game.h"
 
-int main(){
+int WinMain(){
     Game game;
     return 0;
 }
